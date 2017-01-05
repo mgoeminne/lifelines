@@ -62,7 +62,7 @@ class NelsonAalenFitter(UnivariateFitter):
         cumulative_hazard_, cumulative_sq_ = _additive_estimate(self.event_table, self.timeline,
                                                                 self._additive_f, self._variance_f, False)
 
-        # esimates
+        # estimates
         self._label = label
         self.cumulative_hazard_ = pd.DataFrame(cumulative_hazard_, columns=[self._label])
         self.confidence_interval_ = self._bounds(cumulative_sq_[:, None], alpha if alpha else self.alpha, ci_labels)
